@@ -20,12 +20,9 @@ jobs:
           hugo-version: '0.122.0'	# 获取指定版本的 hugo
           extended: false
 
-      - name: Build Site
-        run: |
-          pwd
-          ls
-          cp -R exampleSite/* .
-          hugo --themesDir ../ --baseURL https://shenweiyan.github.io/WebStack-Hugo/
+      - name: Build 
+        #run: hugo --minify	# 使用 hugo 构建静态网页
+        run: hugo         	# 使用 hugo 构建静态网页
           
       - name: Deploy Pages
         uses: peaceiris/actions-gh-pages@v3	  # 一个自动发布 github pages 的 action
